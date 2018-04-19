@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="pizza_db@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.2">
+    <root id="1"/>
+    <database id="2" parent="1" name="pizza_db">
+      <ObjectId>33232</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <schema id="3" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2018-04-19.12:11:29.094</IntrospectionTimestamp>
+      <IntrospectionStateNumber>748</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="4" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="5" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="6" parent="2" name="pg_temp_1">
+      <ObjectId>11736</ObjectId>
+    </schema>
+    <schema id="7" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11737</ObjectId>
+    </schema>
+    <schema id="8" parent="2" name="information_schema">
+      <ObjectId>12648</ObjectId>
+    </schema>
+    <sequence id="9" parent="3" name="pizzas_id_seq">
+      <ObjectId>33233</ObjectId>
+      <StateNumber>743</StateNumber>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="10" parent="3" name="users_id_seq">
+      <ObjectId>33244</ObjectId>
+      <StateNumber>744</StateNumber>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <table id="11" parent="3" name="pizzas">
+      <ObjectId>33235</ObjectId>
+      <StateNumber>743</StateNumber>
+    </table>
+    <table id="12" parent="3" name="users">
+      <ObjectId>33246</ObjectId>
+      <StateNumber>744</StateNumber>
+    </table>
+    <column id="13" parent="11" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>743</StateNumber>
+      <SequenceName>pizzas_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;pizzas_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="14" parent="11" name="available">
+      <Position>2</Position>
+      <DataType>bigint|0</DataType>
+      <StateNumber>743</StateNumber>
+    </column>
+    <column id="15" parent="11" name="description">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>743</StateNumber>
+    </column>
+    <column id="16" parent="11" name="imageurl">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>743</StateNumber>
+    </column>
+    <column id="17" parent="11" name="pizzaname">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>743</StateNumber>
+    </column>
+    <column id="18" parent="11" name="price">
+      <Position>6</Position>
+      <DataType>bigint|0</DataType>
+      <StateNumber>743</StateNumber>
+    </column>
+    <index id="19" parent="11" name="pizzas_pkey">
+      <ObjectId>33242</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="20" parent="11" name="pizzas_pkey">
+      <ObjectId>33243</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>pizzas_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="21" parent="12" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>744</StateNumber>
+      <SequenceName>users_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="22" parent="12" name="email">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>744</StateNumber>
+    </column>
+    <column id="23" parent="12" name="enabled">
+      <Position>3</Position>
+      <DataType>boolean|0</DataType>
+      <StateNumber>744</StateNumber>
+    </column>
+    <column id="24" parent="12" name="hashpassword">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>744</StateNumber>
+    </column>
+    <column id="25" parent="12" name="name">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>744</StateNumber>
+    </column>
+    <column id="26" parent="12" name="phonenumber">
+      <Position>6</Position>
+      <DataType>bigint|0</DataType>
+      <StateNumber>744</StateNumber>
+    </column>
+    <column id="27" parent="12" name="role">
+      <Position>7</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>744</StateNumber>
+    </column>
+    <index id="28" parent="12" name="users_pkey">
+      <ObjectId>33253</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="29" parent="12" name="uk_6dotkott2kjsp8vw4d0m25fb7">
+      <ObjectId>33255</ObjectId>
+      <ColNames>email</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="30" parent="12" name="uk_kwds03ohobcd8p6eowkw0f5bm">
+      <ObjectId>33257</ObjectId>
+      <ColNames>phonenumber</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="31" parent="12" name="users_pkey">
+      <ObjectId>33254</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="32" parent="12" name="uk_6dotkott2kjsp8vw4d0m25fb7">
+      <ObjectId>33256</ObjectId>
+      <ColNames>email</ColNames>
+      <UnderlyingIndexName>uk_6dotkott2kjsp8vw4d0m25fb7</UnderlyingIndexName>
+    </key>
+    <key id="33" parent="12" name="uk_kwds03ohobcd8p6eowkw0f5bm">
+      <ObjectId>33258</ObjectId>
+      <ColNames>phonenumber</ColNames>
+      <UnderlyingIndexName>uk_kwds03ohobcd8p6eowkw0f5bm</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>

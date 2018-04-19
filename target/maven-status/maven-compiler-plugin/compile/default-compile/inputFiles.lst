@@ -1,0 +1,14 @@
+A:\Projects\PizzaOnline\src\main\java\ru\itis\pizzaonline\config\DBConfig.java
+A:\Projects\PizzaOnline\src\main\java\ru\itis\pizzaonline\config\WebInitializer.java
+A:\Projects\PizzaOnline\src\main\java\ru\itis\pizzaonline\security\Role\Role.java
+A:\Projects\PizzaOnline\src\main\java\ru\itis\pizzaonline\services\interfaces\AdminService.java
+A:\Projects\PizzaOnline\src\main\java\ru\itis\pizzaonline\forms\UserRegistrationForm.java
+A:\Projects\PizzaOnline\src\main\java\ru\itis\pizzaonline\models\Pizza.java
+A:\Projects\PizzaOnline\src\main\java\ru\itis\pizzaonline\config\AppConfig.java
+A:\Projects\PizzaOnline\src\main\java\ru\itis\pizzaonline\services\implementations\AdminServiceImpl.java
+A:\Projects\PizzaOnline\src\main\java\ru\itis\pizzaonline\controllers\AdminController.java
+A:\Projects\PizzaOnline\src\main\java\ru\itis\pizzaonline\services\interfaces\PizzaService.java
+A:\Projects\PizzaOnline\src\main\java\ru\itis\pizzaonline\models\User.java
+A:\Projects\PizzaOnline\src\main\java\ru\itis\pizzaonline\services\implementations\PizzaServiceImpl.java
+A:\Projects\PizzaOnline\src\main\java\ru\itis\pizzaonline\repositories\UserRepository.java
+A:\Projects\PizzaOnline\src\main\java\ru\itis\pizzaonline\repositories\PizzaRepository.java

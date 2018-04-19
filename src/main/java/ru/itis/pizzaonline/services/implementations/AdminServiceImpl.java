@@ -2,11 +2,10 @@ package ru.itis.pizzaonline.services.implementations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.xhtmlrenderer.css.parser.property.PrimitivePropertyBuilders;
 import ru.itis.pizzaonline.models.Pizza;
 import ru.itis.pizzaonline.models.User;
-import ru.itis.pizzaonline.repository.PizzaRepository;
-import ru.itis.pizzaonline.repository.UserRepository;
+import ru.itis.pizzaonline.repositories.PizzaRepository;
+import ru.itis.pizzaonline.repositories.UserRepository;
 import ru.itis.pizzaonline.security.Role.Role;
 import ru.itis.pizzaonline.services.interfaces.AdminService;
 
