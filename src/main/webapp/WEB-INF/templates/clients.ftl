@@ -32,7 +32,7 @@
         </tr>
     </#list>
 </#if>
-    <form action="/admin/clients" method="post">
+    <form action="/admin/addUser" method="post">
         <tr>
             <td>id</td>
             <td>

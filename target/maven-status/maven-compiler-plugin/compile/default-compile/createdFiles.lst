@@ -10,6 +10,7 @@ ru\itis\pizzaonline\services\implementations\PizzaServiceImpl.class
 ru\itis\pizzaonline\services\interfaces\PizzaService.class
 ru\itis\pizzaonline\repositories\UserRepository.class
 ru\itis\pizzaonline\services\interfaces\RegistrationService.class
+ru\itis\pizzaonline\validators\UserRegistrationFormValidator.class
 ru\itis\pizzaonline\controllers\RegistrationController.class
 ru\itis\pizzaonline\forms\UserRegistrationForm.class
 ru\itis\pizzaonline\repository\PizzaRepository.class
