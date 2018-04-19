@@ -28,7 +28,7 @@
         <spring-security.version>4.2.3.RELEASE</spring-security.version>
         <hibernate.version>5.2.12.Final</hibernate.version>
         <javax-validation.version>2.0.1.Final</javax-validation.version>
-        <javax.servlet-api.version>4.0.0</javax.servlet-api.version>
+        <javax.servlet-api.version>2.5</javax.servlet-api.version>
 
     </properties>
 
@@ -101,23 +101,6 @@
             <version>${spring-data-jpa.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-core</artifactId>
-            <version>${spring-security.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-config</artifactId>
-            <version>${spring-security.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-web</artifactId>
-            <version>${spring-security.version}</version>
-        </dependency>
 
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -146,12 +129,14 @@
             <version>2.3.23</version>
         </dependency>
 
-
+        <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
         <dependency>
             <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>${javax.servlet-api.version}</version>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
         </dependency>
+
 
         <dependency>
             <groupId>javax.validation</groupId>
@@ -177,17 +162,7 @@
             <version>${commons-io.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.xhtmlrenderer</groupId>
-            <artifactId>flying-saucer-core</artifactId>
-            <version>${flying-saucer.version}</version>
-        </dependency>
 
-        <dependency>
-            <groupId>org.xhtmlrenderer</groupId>
-            <artifactId>flying-saucer-pdf-itext5</artifactId>
-            <version>${flying-saucer.version}</version>
-        </dependency>
 
     </dependencies>
 

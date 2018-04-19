@@ -3,6 +3,7 @@ package ru.itis.pizzaonline.config;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
@@ -23,9 +24,11 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
+@ComponentScan(basePackages = { "ru.itis.pizzaonline"})
 @EnableJpaRepositories(basePackages = {"ru.itis.pizzaonline.repositories"})
 public class DBConfig {
 
+    @Autowired
     private final Environment environment;
 
     @Autowired
@@ -38,10 +41,10 @@ public class DBConfig {
 
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
-        dataSource.setDriverClassName(this.environment.getProperty("db.driver"));
-        dataSource.setUrl(this.environment.getProperty("db.url"));
-        dataSource.setUsername(this.environment.getProperty("db.username"));
-        dataSource.setPassword(this.environment.getProperty("db.password"));
+        dataSource.setDriverClassName(environment.getProperty("db.driver"));
+        dataSource.setUrl(environment.getProperty("db.url"));
+        dataSource.setUsername(environment.getProperty("db.username"));
+        dataSource.setPassword(environment.getProperty("db.password"));
 
         return dataSource;
     }

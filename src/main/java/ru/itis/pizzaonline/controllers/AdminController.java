@@ -1,12 +1,9 @@
 package ru.itis.pizzaonline.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import ru.itis.pizzaonline.forms.UserRegistrationForm;
@@ -16,9 +13,7 @@ import ru.itis.pizzaonline.security.Role.Role;
 import ru.itis.pizzaonline.services.implementations.AdminServiceImpl;
 import ru.itis.pizzaonline.services.implementations.PizzaServiceImpl;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import javax.validation.constraints.Email;
 import java.util.List;
 
 @Controller
@@ -46,7 +41,7 @@ public class AdminController {
     public String getClientsPage(@ModelAttribute("model")ModelMap modelMap){
         List<User> users = adminService.getAllUsersByRole(Role.USER);
         modelMap.addAttribute("users", users);
-        return "clientsPage";
+        return "clients";
     }
 
     @PostMapping("/addUser")
