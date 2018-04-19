@@ -22,7 +22,7 @@ public class UserRegistrationForm {
     private String email;
 
     @Column(name = "phoneNumber")
-    private Long phoneNumber;
+    private String phoneNumber;
 
     @Column(name = "role")
     private Role role;

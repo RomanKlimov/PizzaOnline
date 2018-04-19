@@ -39,7 +39,7 @@ public class User {
 
     @NotNull
     @Column(name = "phoneNumber", unique = true)
-    private Long phoneNumber;
+    private String phoneNumber;
 
     @Column(name = "hashPassword")
     private String hashPassword;

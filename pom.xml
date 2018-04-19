@@ -30,9 +30,6 @@
         <javax-validation.version>2.0.1.Final</javax-validation.version>
         <javax.servlet-api.version>4.0.0</javax.servlet-api.version>
 
-        <thymeleaf.version>3.0.7.RELEASE</thymeleaf.version>
-        <thymeleaf-spring4.version>3.0.7.RELEASE</thymeleaf-spring4.version>
-
     </properties>
 
     <dependencies>
