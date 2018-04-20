@@ -88,28 +88,6 @@ public class DBConfig {
         return new PersistenceExceptionTranslationPostProcessor();
     }
 
-    @Bean
-    public JavaMailSender javaMailSender(){
-
-        JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
-        mailSender.setHost(this.environment.getProperty("mail.host"));
-        mailSender.setPort(Integer.parseInt(this.environment.getProperty("mail.port")));
-        mailSender.setUsername(this.environment.getProperty("mail.username"));
-        mailSender.setPassword(this.environment.getProperty("mail.password"));
-        mailSender.setProtocol(this.environment.getProperty("mail.protocol"));
-
-        Properties javaMailProperties = new Properties();
-        javaMailProperties.put("mail.smtp.starttls.enable", this.environment.getProperty("mail.smtp.starttls.enable"));
-        javaMailProperties.put("mail.smtp.allow8bitmime", this.environment.getProperty("mail.smtp.allow8bitmime"));
-        javaMailProperties.put("mail.smtp.ssl.trust", this.environment.getProperty("mail.smtp.ssl.trust"));
-        javaMailProperties.put("mail.smtp.auth", this.environment.getProperty("mail.smtp.auth"));
-        javaMailProperties.put("mail.debug", this.environment.getProperty("mail.debug"));
-
-        mailSender.setJavaMailProperties(javaMailProperties);
-        return mailSender;
-
-    }
-
 
 
 }

@@ -9,8 +9,8 @@
     </database>
     <schema id="3" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2018-04-19.12:11:29.094</IntrospectionTimestamp>
-      <IntrospectionStateNumber>748</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-04-20.19:12:17.982</IntrospectionTimestamp>
+      <IntrospectionStateNumber>824</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -30,133 +30,172 @@
       <ObjectId>12648</ObjectId>
     </schema>
     <sequence id="9" parent="3" name="pizzas_id_seq">
-      <ObjectId>33233</ObjectId>
-      <StateNumber>743</StateNumber>
+      <ObjectId>33377</ObjectId>
+      <StateNumber>821</StateNumber>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
     <sequence id="10" parent="3" name="users_id_seq">
-      <ObjectId>33244</ObjectId>
-      <StateNumber>744</StateNumber>
+      <ObjectId>33388</ObjectId>
+      <StateNumber>822</StateNumber>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
-    <table id="11" parent="3" name="pizzas">
-      <ObjectId>33235</ObjectId>
-      <StateNumber>743</StateNumber>
+    <sequence id="11" parent="3" name="token_id_seq">
+      <ObjectId>33322</ObjectId>
+      <StateNumber>766</StateNumber>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <table id="12" parent="3" name="pizzas">
+      <ObjectId>33379</ObjectId>
+      <StateNumber>821</StateNumber>
     </table>
-    <table id="12" parent="3" name="users">
-      <ObjectId>33246</ObjectId>
-      <StateNumber>744</StateNumber>
+    <table id="13" parent="3" name="token">
+      <ObjectId>33324</ObjectId>
+      <StateNumber>770</StateNumber>
     </table>
-    <column id="13" parent="11" name="id">
+    <table id="14" parent="3" name="users">
+      <ObjectId>33390</ObjectId>
+      <StateNumber>822</StateNumber>
+    </table>
+    <column id="15" parent="12" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>743</StateNumber>
+      <StateNumber>821</StateNumber>
       <SequenceName>pizzas_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;pizzas_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="14" parent="11" name="available">
+    <column id="16" parent="12" name="available">
       <Position>2</Position>
       <DataType>bigint|0</DataType>
-      <StateNumber>743</StateNumber>
+      <StateNumber>821</StateNumber>
     </column>
-    <column id="15" parent="11" name="description">
+    <column id="17" parent="12" name="description">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
-      <StateNumber>743</StateNumber>
+      <StateNumber>821</StateNumber>
     </column>
-    <column id="16" parent="11" name="imageurl">
+    <column id="18" parent="12" name="imageurl">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
-      <StateNumber>743</StateNumber>
+      <StateNumber>821</StateNumber>
     </column>
-    <column id="17" parent="11" name="pizzaname">
+    <column id="19" parent="12" name="pizzaname">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
-      <StateNumber>743</StateNumber>
+      <StateNumber>821</StateNumber>
     </column>
-    <column id="18" parent="11" name="price">
+    <column id="20" parent="12" name="price">
       <Position>6</Position>
       <DataType>bigint|0</DataType>
-      <StateNumber>743</StateNumber>
+      <StateNumber>821</StateNumber>
     </column>
-    <index id="19" parent="11" name="pizzas_pkey">
-      <ObjectId>33242</ObjectId>
+    <index id="21" parent="12" name="pizzas_pkey">
+      <ObjectId>33386</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="20" parent="11" name="pizzas_pkey">
-      <ObjectId>33243</ObjectId>
+    <key id="22" parent="12" name="pizzas_pkey">
+      <ObjectId>33387</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>pizzas_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="21" parent="12" name="id">
+    <column id="23" parent="13" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>744</StateNumber>
-      <SequenceName>users_id_seq</SequenceName>
-      <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
+      <StateNumber>766</StateNumber>
+      <SequenceName>token_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;token_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="22" parent="12" name="email">
+    <column id="24" parent="13" name="receivingdate">
       <Position>2</Position>
-      <DataType>varchar(255)|0</DataType>
-      <StateNumber>744</StateNumber>
+      <DataType>timestamp|0</DataType>
+      <StateNumber>766</StateNumber>
     </column>
-    <column id="23" parent="12" name="enabled">
+    <column id="25" parent="13" name="token">
       <Position>3</Position>
-      <DataType>boolean|0</DataType>
-      <StateNumber>744</StateNumber>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>766</StateNumber>
     </column>
-    <column id="24" parent="12" name="hashpassword">
+    <column id="26" parent="13" name="user_id">
       <Position>4</Position>
-      <DataType>varchar(255)|0</DataType>
-      <StateNumber>744</StateNumber>
-    </column>
-    <column id="25" parent="12" name="name">
-      <Position>5</Position>
-      <DataType>varchar(255)|0</DataType>
-      <StateNumber>744</StateNumber>
-    </column>
-    <column id="26" parent="12" name="phonenumber">
-      <Position>6</Position>
       <DataType>bigint|0</DataType>
-      <StateNumber>744</StateNumber>
+      <NotNull>1</NotNull>
+      <StateNumber>766</StateNumber>
     </column>
-    <column id="27" parent="12" name="role">
-      <Position>7</Position>
-      <DataType>varchar(255)|0</DataType>
-      <StateNumber>744</StateNumber>
-    </column>
-    <index id="28" parent="12" name="users_pkey">
-      <ObjectId>33253</ObjectId>
+    <index id="27" parent="13" name="token_pkey">
+      <ObjectId>33328</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="29" parent="12" name="uk_6dotkott2kjsp8vw4d0m25fb7">
-      <ObjectId>33255</ObjectId>
+    <key id="28" parent="13" name="token_pkey">
+      <ObjectId>33329</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>token_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="29" parent="14" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>822</StateNumber>
+      <SequenceName>users_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="30" parent="14" name="email">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>822</StateNumber>
+    </column>
+    <column id="31" parent="14" name="hashpassword">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>822</StateNumber>
+    </column>
+    <column id="32" parent="14" name="name">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>822</StateNumber>
+    </column>
+    <column id="33" parent="14" name="phonenumber">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>822</StateNumber>
+    </column>
+    <column id="34" parent="14" name="role">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>822</StateNumber>
+    </column>
+    <index id="35" parent="14" name="users_pkey">
+      <ObjectId>33397</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="36" parent="14" name="uk_6dotkott2kjsp8vw4d0m25fb7">
+      <ObjectId>33399</ObjectId>
       <ColNames>email</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="30" parent="12" name="uk_kwds03ohobcd8p6eowkw0f5bm">
-      <ObjectId>33257</ObjectId>
+    <index id="37" parent="14" name="uk_kwds03ohobcd8p6eowkw0f5bm">
+      <ObjectId>33401</ObjectId>
       <ColNames>phonenumber</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="31" parent="12" name="users_pkey">
-      <ObjectId>33254</ObjectId>
+    <key id="38" parent="14" name="users_pkey">
+      <ObjectId>33398</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <key id="32" parent="12" name="uk_6dotkott2kjsp8vw4d0m25fb7">
-      <ObjectId>33256</ObjectId>
+    <key id="39" parent="14" name="uk_6dotkott2kjsp8vw4d0m25fb7">
+      <ObjectId>33400</ObjectId>
       <ColNames>email</ColNames>
       <UnderlyingIndexName>uk_6dotkott2kjsp8vw4d0m25fb7</UnderlyingIndexName>
     </key>
-    <key id="33" parent="12" name="uk_kwds03ohobcd8p6eowkw0f5bm">
-      <ObjectId>33258</ObjectId>
+    <key id="40" parent="14" name="uk_kwds03ohobcd8p6eowkw0f5bm">
+      <ObjectId>33402</ObjectId>
       <ColNames>phonenumber</ColNames>
       <UnderlyingIndexName>uk_kwds03ohobcd8p6eowkw0f5bm</UnderlyingIndexName>
     </key>

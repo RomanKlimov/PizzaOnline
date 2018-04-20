@@ -6,6 +6,7 @@
         <fileset id="fileset" name="Spring Application Context" removed="false">
           <file>file://$MODULE_DIR$/src/main/java/ru/itis/pizzaonline/config/DBConfig.java</file>
           <file>file://$MODULE_DIR$/src/main/java/ru/itis/pizzaonline/config/AppConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/resources/context.xml</file>
         </fileset>
       </configuration>
     </facet>

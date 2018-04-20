@@ -41,7 +41,7 @@ public class AdminController {
     public String getClientsPage(@ModelAttribute("model")ModelMap modelMap){
         List<User> users = adminService.getAllUsersByRole(Role.CLIENT);
         modelMap.addAttribute("users", users);
-        return "clients";
+        return "admin/clients";
     }
 
     @PostMapping("/addUser")

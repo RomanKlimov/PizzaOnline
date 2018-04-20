@@ -15,22 +15,16 @@ import javax.validation.constraints.NotNull;
 @Builder
 @ToString
 @EqualsAndHashCode
+@NoArgsConstructor
 public class User {
 
-    public User() {
-        this.enabled = false;
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "enabled")
-    private boolean enabled;
-
     @Column(name = "name")
     private String name;
-
 
     @NotNull
     @Email

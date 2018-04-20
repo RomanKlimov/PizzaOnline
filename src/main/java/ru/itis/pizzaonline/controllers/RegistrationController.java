@@ -17,7 +17,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import ru.itis.pizzaonline.exceptions.EmailExistsException;
 import ru.itis.pizzaonline.forms.UserRegistrationForm;
 import ru.itis.pizzaonline.models.User;
-import ru.itis.pizzaonline.models.VerificationToken;
 import ru.itis.pizzaonline.security.Role.Role;
 import ru.itis.pizzaonline.services.interfaces.RegistrationService;
 import ru.itis.pizzaonline.validators.UserRegistrationFormValidator;
@@ -41,6 +40,7 @@ public class RegistrationController {
     // @Autowired
     private MessageSource messages;
 
+    private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     @InitBinder("userForm")
     public void initUserFormValidator(WebDataBinder binder){
@@ -50,61 +50,22 @@ public class RegistrationController {
 
     @PostMapping("/signUp")
     public String registerUserAccount(@ModelAttribute("userForm") @Valid UserRegistrationForm userRegistrationForm,
-                                      BindingResult errors, WebRequest request, RedirectAttributes attributes, HttpServletRequest httpServletRequest) throws EmailExistsException {
+                                      BindingResult errors, WebRequest request, RedirectAttributes attributes, HttpServletRequest httpServletRequest, ModelMap modelMap) throws EmailExistsException {
         if (errors.hasErrors()){
             attributes.addFlashAttribute("error" , errors.getAllErrors().get(0).getDefaultMessage());
             return "redirect:/home";
         }
+        String hashPass = passwordEncoder.encode(userRegistrationForm.getPassword());
         User user = User.builder()
                 .name(userRegistrationForm.getName())
                 .email(userRegistrationForm.getEmail())
                 .phoneNumber(userRegistrationForm.getPhoneNumber())
+                .hashPassword(hashPass)
                 .role(Role.CLIENT)
                 .build();
         registrationService.createUserAccount(user);
-        return "success_registration";
-    }
 
-    @GetMapping("/confirmRegistration")
-    public String confirmRegistration(@ModelAttribute("model") ModelMap modelMap , WebRequest request, @RequestParam String token, RedirectAttributes attributes){
-        Locale locale = request.getLocale();
-        VerificationToken verificationToken = registrationService.getVerificationToken(token);
-        if (verificationToken == null){
-            String message = messages.getMessage("auth.message.invalidToken", null, locale);
-            modelMap.addAttribute("message", message);
-            return "redirect:/badUser.html";
-        }
-
-        Date today = Calendar.getInstance().getTime();
-        if (TimeUnit.MILLISECONDS.toMinutes(today.getTime()-verificationToken.getReceivingDate().getTime()) > 24*60){
-            String messageValue = messages.getMessage("auth.message.expired", null, locale);
-            registrationService.remove(token);
-            return "redirect:/badUser.html";
-        }
-        modelMap.addAttribute("token", token);
-        return "new_pass";
-    }
-
-    @Transactional
-    @PostMapping("/confirmRegistration")
-    public String processRegistrationForm (@RequestParam String token, WebRequest request,RedirectAttributes attributes){
-        String password = request.getParameter("password");
-        Zxcvbn passwordChecker = new Zxcvbn();
-        Strength strength = passwordChecker.measure(password);
-
-        if (strength.getScore() < 3){
-            attributes.addAttribute("token", token);
-            attributes.addFlashAttribute("error", "Ваш пароль слишком слабый.");
-            return "redirect:/confirmRegistration";
-        }
-        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        User user = registrationService.getVerificationToken(token).getUser();
-        user.setEnabled(true);
-        user.setHashPassword(passwordEncoder.encode(password));
-        registrationService.confirmPassword(user);
-        registrationService.remove(token);
         return "redirect:/home";
-
     }
 
 }
