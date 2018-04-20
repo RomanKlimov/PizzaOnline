@@ -40,9 +40,9 @@ public class AdminController {
 
     @GetMapping("/clients")
     public String getClientsPage(@ModelAttribute("model")ModelMap modelMap){
-        List<User> users = adminService.getAllUsersByRole(Role.USER);
+        List<User> users = adminService.getAllUsersByRole(Role.CLIENT);
         modelMap.addAttribute("users", users);
-        return "clients";
+        return "admin/clients";
     }
 
     @PostMapping("/addUser")
@@ -58,7 +58,7 @@ public class AdminController {
                     .build();
             adminService.addUser(user);
         }
-        if(userRegistrationForm.getRole().equals(Role.USER))
+        if(userRegistrationForm.getRole().equals(Role.CLIENT))
             return "redirect:/admin/clients";
         else
             return "redirect:/admin/couriers";
@@ -89,7 +89,7 @@ public class AdminController {
     @PostMapping("/deleteUser")
     public String deleteUser(@RequestParam(value = "email", required = true) String email){
         User user = adminService.deleteUser(email);
-        if (user.getRole().equals(Role.USER))
+        if (user.getRole().equals(Role.CLIENT))
             return "redirect:/admin/clients";
         else
             return "redirect:/admin/couriers";
