@@ -16,6 +16,8 @@ import javax.persistence.*;
 @Setter
 @Table(name = "orders")
 public class Order {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String address;
@@ -25,7 +27,8 @@ public class Order {
     @Column(columnDefinition = "boolean default true")
     private Boolean isActive;
 
-    @OneToOne(targetEntity = User.class, mappedBy = "user_id", fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "courier_id", referencedColumnName = "id")
     private User courier;
     private Boolean completed;
 }

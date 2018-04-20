@@ -33,7 +33,7 @@ public class CourierController {
     public String getOrdersPage(ModelMap modelMap){
         List<Order> orderList = orderService.getAllOrders();
         modelMap.addAttribute("orders", orderList);
-        return "courier/ordersPage";
+        return "courier/orders";
     }
 
     @PostMapping("/acceptOrder")

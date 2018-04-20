@@ -42,6 +42,6 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     private Role role;
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY)
     private List<Order> orders;
 }
