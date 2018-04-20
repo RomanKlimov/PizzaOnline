@@ -1,5 +1,6 @@
 package ru.itis.pizzaonline.services.interfaces;
 
+import ru.itis.pizzaonline.models.InviteCode;
 import ru.itis.pizzaonline.models.Pizza;
 import ru.itis.pizzaonline.models.User;
 import ru.itis.pizzaonline.security.Role.Role;
@@ -13,4 +14,9 @@ public interface AdminService {
     void addUser(User user);
     Optional<User> getUserByEmail(String email);
     User deleteUser(String email);
+
+
+    void generateInviteCode(String forName);
+
+    List<InviteCode> getAllInviteCode();
 }

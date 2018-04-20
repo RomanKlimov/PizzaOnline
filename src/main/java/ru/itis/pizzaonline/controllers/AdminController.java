@@ -7,6 +7,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import ru.itis.pizzaonline.forms.UserRegistrationForm;
+import ru.itis.pizzaonline.models.InviteCode;
 import ru.itis.pizzaonline.models.Pizza;
 import ru.itis.pizzaonline.models.User;
 import ru.itis.pizzaonline.security.Role.Role;
@@ -94,5 +95,18 @@ public class AdminController {
             return "redirect:/admin/couriers";
     }
 
+
+    @PostMapping("/inviteCourier")
+    public String inviteCourier(@RequestParam("forName") String forName){
+        adminService.generateInviteCode(forName);
+        return "redirect:/inviteCourier";
+    }
+
+    @GetMapping("/inviteCourier")
+    public String getInviteCourierPage(ModelMap modelMap){
+        List<InviteCode> inviteCodes = adminService.getAllInviteCode();
+        modelMap.addAttribute("inviteCodes", inviteCodes);
+        return "inviteCourierPage";
+    }
 
 }

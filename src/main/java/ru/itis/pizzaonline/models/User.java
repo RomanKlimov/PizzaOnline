@@ -6,6 +6,7 @@ import ru.itis.pizzaonline.security.Role.Role;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Getter
 @Setter
@@ -41,4 +42,6 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     private Role role;
+    @OneToMany
+    private List<Order> orders;
 }
