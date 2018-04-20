@@ -2,8 +2,10 @@ package ru.itis.pizzaonline.services.implementations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ru.itis.pizzaonline.models.InviteCode;
 import ru.itis.pizzaonline.models.Pizza;
 import ru.itis.pizzaonline.models.User;
+import ru.itis.pizzaonline.repositories.InviteCodeRepository;
 import ru.itis.pizzaonline.repositories.PizzaRepository;
 import ru.itis.pizzaonline.repositories.UserRepository;
 import ru.itis.pizzaonline.security.Role.Role;
@@ -11,6 +13,7 @@ import ru.itis.pizzaonline.services.interfaces.AdminService;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class AdminServiceImpl implements AdminService{
@@ -20,6 +23,9 @@ public class AdminServiceImpl implements AdminService{
 
     @Autowired
     private PizzaRepository pizzaRepository;
+
+    @Autowired
+    private InviteCodeRepository inviteCodeRepository;
 
     @Override
     public List<User> getAllUsersByRole(Role role) {
@@ -46,5 +52,17 @@ public class AdminServiceImpl implements AdminService{
         User user = userRepository.deleteByEmail(email);
         return user;
 
+    }
+
+    @Override
+    public void generateInviteCode(String forName){
+        String code = UUID.randomUUID().toString();
+        inviteCodeRepository.save(new InviteCode(code, forName));
+    }
+
+    @Override
+    public List<InviteCode> getAllInviteCode(){
+        List<InviteCode> inviteCodes = inviteCodeRepository.findAll();
+        return inviteCodes;
     }
 }
