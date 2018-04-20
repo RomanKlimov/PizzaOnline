@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="887bd3a6-f459-47d5-b8be-27c76f034500" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/itis/pizzaonline/repositories/InviteCodeRepository.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ru/itis/pizzaonline/repository/PizzaRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ru/itis/pizzaonline/repository/UserRepository.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/PizzaOnline_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/PizzaOnline_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PizzaOnline.iml" afterPath="$PROJECT_DIR$/PizzaOnline.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/itis/pizzaonline/controllers/AdminController.java" afterPath="$PROJECT_DIR$/src/main/java/ru/itis/pizzaonline/controllers/AdminController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/itis/pizzaonline/models/User.java" afterPath="$PROJECT_DIR$/src/main/java/ru/itis/pizzaonline/models/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/itis/pizzaonline/repositories/PizzaRepository.java" afterPath="$PROJECT_DIR$/src/main/java/ru/itis/pizzaonline/repositories/PizzaRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/itis/pizzaonline/repositories/UserRepository.java" afterPath="$PROJECT_DIR$/src/main/java/ru/itis/pizzaonline/repositories/UserRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/itis/pizzaonline/repositories/VerificationTokenRepository.java" afterPath="$PROJECT_DIR$/src/main/java/ru/itis/pizzaonline/repositories/VerificationTokenRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/itis/pizzaonline/services/implementations/AdminServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ru/itis/pizzaonline/services/implementations/AdminServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/itis/pizzaonline/services/interfaces/AdminService.java" afterPath="$PROJECT_DIR$/src/main/java/ru/itis/pizzaonline/services/interfaces/AdminService.java" />
-    </list>
+    <list default="true" id="887bd3a6-f459-47d5-b8be-27c76f034500" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -133,7 +118,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/itis/pizzaonline/models/User.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="267">
@@ -185,11 +170,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Order.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Order.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/itis/pizzaonline/models/Order.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+            <state relative-caret-position="391">
+              <caret line="23" column="12" lean-forward="true" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -276,13 +261,13 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/itis/pizzaonline/services/interfaces/CourierService.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ru/itis/pizzaonline/config/WebSocketConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/itis/pizzaonline/models/Order.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/itis/pizzaonline/services/interfaces/OrderService.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/itis/pizzaonline/repositories/OrderRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/itis/pizzaonline/services/implementations/OrderServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/itis/pizzaonline/controllers/CourierController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/courier/completedOrders.ftl" />
         <option value="$PROJECT_DIR$/src/main/java/ru/itis/pizzaonline/models/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/itis/pizzaonline/models/Order.java" />
       </list>
     </option>
   </component>
@@ -816,6 +801,9 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL" />
     <property name="ignore_missing_gitignore" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../3rd_semestr/Java_EE_Course/OnlinePizza/PizzaOnline" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -1356,12 +1344,12 @@
       <workItem from="1524084498967" duration="2044000" />
       <workItem from="1524121587238" duration="12048000" />
       <workItem from="1524145075738" duration="13000" />
-      <workItem from="1524145531057" duration="33827000" />
+      <workItem from="1524145531057" duration="34516000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57226000" />
+    <option name="totallyTimeSpent" value="57915000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -1788,16 +1776,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/itis/pizzaonline/models/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/courier/completedOrders.ftl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15214">
@@ -1852,5 +1830,94 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/itis/pizzaonline/models/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="12" lean-forward="true" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>PizzaOnline:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>jquery</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>PizzaOnline</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
