@@ -8,12 +8,6 @@ import ru.itis.pizzaonline.models.User;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * Date 20.04.2018
- *
- * @author Hursanov Sulaymon
- * @version v1.0
- **/
 @Repository
 public interface OrderRepository extends JpaRepository<Order, Long> {
     List<Order> findAllByIsActiveTrue();

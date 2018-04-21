@@ -35,6 +35,6 @@ public class Pizza {
     private String description;
 
     @NotNull
-    private Long available;
+    private Long available; // кол-во доступной пиццы
 
 }

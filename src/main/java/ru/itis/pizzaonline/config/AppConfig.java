@@ -17,16 +17,6 @@ import java.net.URL;
 @PropertySource("classpath:application.properties")
 public class AppConfig extends WebMvcConfigurerAdapter {
 
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry){
-
-        registry.addResourceHandler("/css/**", "/fonts/**", "/js/**")
-                .addResourceLocations("/css/", "/fonts/", "/js/")
-                .setCachePeriod(3600)
-                .resourceChain(true);
-
-    }
-
     @Bean
     public FreeMarkerConfigurer freemarkerConfig() {
         FreeMarkerConfigurer freeMarkerConfigurer = new FreeMarkerConfigurer();
