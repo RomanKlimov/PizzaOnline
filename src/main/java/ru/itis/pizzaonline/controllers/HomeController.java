@@ -40,7 +40,7 @@ public class HomeController {
         List<Pizza> pizzaList = pizzaService.getAllPizzas();
         System.out.println(Arrays.asList(pizzaList));
         modelMap.addAttribute("list", pizzaList);
-        return "client/testHome";
+        return "guest/home";
     }
 
     @PostMapping(value = "/toCart")
