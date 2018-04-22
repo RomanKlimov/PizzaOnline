@@ -35,9 +35,7 @@ public class HomeController {
 
     @GetMapping(value = "/home")
     public String home(@ModelAttribute("model") ModelMap modelMap) {
-//        List<Pizza> pizzaList = (List<Pizza>) httpServletRequest.getSession().getAttribute("pizzaList");
         List<Pizza> pizzaList = pizzaService.getAllPizzas();
-        System.out.println(Arrays.asList(pizzaList));
         modelMap.addAttribute("list", pizzaList);
         return "guest/home";
     }

@@ -3,11 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script
-            src="https://code.jquery.com/jquery-3.3.1.min.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -23,13 +18,9 @@
         <input type="hidden" name="cartId" value="${cart.id}">
         <input type="submit" value="Удалить">
     </form>
-
+<#else >
 </#list>
 </ul>
-    <form name="orderPizza" action="/deleteFromCart" method="post">
-        <input type="hidden" name="cartId" value="${cart.id}">
-        <input type="submit" value="Удалить">
-    </form>
-
+    <a href="/orderPizza">Заказать</a>
 </body>
 </html>

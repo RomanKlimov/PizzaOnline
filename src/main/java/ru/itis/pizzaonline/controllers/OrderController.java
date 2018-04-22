@@ -5,6 +5,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import ru.itis.pizzaonline.forms.OrderForm;
 import ru.itis.pizzaonline.models.Cart;
@@ -28,13 +29,13 @@ public class OrderController {
     @Autowired
     private AuthenticationServiceImpl service;
 
-    @PostMapping("/orderPizza")
+    @GetMapping("/orderPizza")
     public String orderPizza() {
         return "client/order";
     }
 
-    @PostMapping("/succsessOrder")
-    public String succsessOrder(@Valid OrderForm orderForm, BindingResult bindingResult, Authentication authentication, ModelMap modelMap) {
+    @PostMapping("/successOrder")
+    public String successOrder(@Valid OrderForm orderForm, BindingResult bindingResult, Authentication authentication, ModelMap modelMap) {
         if (!bindingResult.hasErrors()) {
             if (authentication != null) {
                 User user = service.getUserByAuthentication(authentication);
@@ -51,8 +52,9 @@ public class OrderController {
                 order.setClientName(clientName);
                 order.setCountOfPizzas(count);
                 order.setPrice(price);
-                orderService.addOrder(order);
+                order.setIsActive(true);
 
+                orderService.addOrder(order);
             }
 
         }

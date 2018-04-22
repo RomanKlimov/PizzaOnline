@@ -80,7 +80,14 @@
                     <a href="/cart" class="">Корзина</a>
                 </li>
                 <li style="text-align:  center;">
+                <#if Session.user??>
+                    <a href="/user/profile" >Личный кабинет</a>
+                </li>
+                <li style="text-align: center">
+                    <a href="/logout" >Выйти</a>
+                    <#else >
                     <a href="/login" class="">Войти</a>
+                </#if>
                 </li>
             </ul>
         </div></div>
@@ -239,9 +246,10 @@
     <div class="container-fluid">
         <div class="block-header"></div>
         <div class="row clearfix" style="margin-left: 8%; margin-right: 8%;">
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+<#list model.list as pizza >
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                 <div class="card" style="text-align:  center;">
-                    <img class="card-img-top" src="http://storage.googleapis.com/bro-cdn1/zgrid/themes/10307/images/home/pizza.png" alt="Card image cap" style="
+                    <img class="card-img-top" src="${pizza.imageUrl}" alt="Card image cap" style="
                         max-width:  300px;
                         max-height:  300px;
                         min-width:  300px;
@@ -249,21 +257,49 @@
                         width: 61px;">
                     <div class="header">
                         <h2>
-                            Basic Card Title
+                            ${pizza.pizzaName}
                         </h2>
-                        <h2 class="" style="margin-top: 10px;">450руб</h2>
+                        <h2 class="" style="margin-top: 10px;">${pizza.price} руб</h2>
                     </div>
-                    <div class="body"><a href="#" class="btn btn-primary" style="width: 100%;">
-                        Добавить в корзину</a>
+                    <div class="body">
+                        <input class="form-control form-control-sm " id="${pizza.id}" type="text" placeholder="введите количество пицц" style="margin-bottom: 3%;">
+                        <button class="btn btn-primary"  onclick="addPizza('${pizza.id}' , $('#'+${pizza.id}).val())" style="width: 100%;">
+                            Добавить в корзину
+                        </button>
                     </div>
                 </div>
             </div>
+<#else >
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div class="card" style="text-align:  center;">
+            <img class="card-img-top" src="http://storage.googleapis.com/bro-cdn1/zgrid/themes/10307/images/home/pizza.png" alt="Card image cap" style="
+                        max-width:  300px;
+                        max-height:  300px;
+                        min-width:  300px;
+                        min-height:  300px;
+                        width: 61px;">
+            <div class="header">
+                <h2>
+                    Default Pizza
+                </h2>
+                <h2 class="" style="margin-top: 10px;">450руб</h2>
+            </div>
+            <div class="body">
+                <input class="form-control form-control-sm " id="1" type="text" placeholder="введите количество пицц" style="margin-bottom: 3%;">
+                <button class="btn btn-primary"  onclick="addPizza('1' , $('#1').val())" style="width: 100%;">
+                    Добавить в корзину
+                </button>
+            </div>
+        </div>
+    </div>
+
+</#list>
             </div>
         </div>
 
 </section>
-
-<script async="" src="https://www.google-analytics.com/analytics.js"></script><script src="/resources/plugins/jquery/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script async="" src="https://www.google-analytics.com/analytics.js"></script><script src="/resources/plugins/jquery/jquery.min.js"></script>
 <script src="/resources/plugins/bootstrap/js/bootstrap.js"></script>
 <script src="/resources/plugins/bootstrap-select/js/bootstrap-select.js"></script>
 <script src="/resources/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
@@ -272,6 +308,19 @@
 <script src="/resources/js/admin.js"></script>
 <script src="/resources/js/pages/cards/basic.js"></script>
 <script src="/resources/js/demo.js"></script>
-
+<script>
+    function addPizza(id, count) {
+        $.ajax({
+            url:'/toCart',
+            method:'post',
+            dataType:'json',
+            data: {'pizzaId':id, 'count': count},
+            success: function () {
+                console.log("success add to cart");
+                alert("success");
+            }
+        });
+    }
+</script>
 </body>
 </html>
