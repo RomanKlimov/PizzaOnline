@@ -10,7 +10,13 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css" >
     <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/js_vendor/jquery-3.2.1.slim.min.js"></script>
+    <#--<script src="/js/js_vendor/jquery-3.2.1.slim.min.js"></script>-->
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <script type="text/javascript" src="/js/addPizza.js"></script>
 
     <script type="text/javascript">
@@ -79,7 +85,7 @@
                                             <#list model.list as pizza >
                                              <div id="cartContent">
                                                 <input id="totalPrice" type="hidden" value="1490">
-                                            <div id="${pizza.pizzaName}2">
+                                            <div id="${pizza.pizzaName}2">  <#--<div id="alfredo"  js ->     $('#'+${pizza.pizzaName}).val()    >-->
                                                 <input type="hidden" value="${pizza.count}" name="${pizza.pizzaName}" id="${pizza.pizzaName}1"></div></div>
 
                                             <div id="cartContentShow">
@@ -393,7 +399,7 @@
                         <h5>550 руб.</h5>
                     </div>
                 </div>
-                <p><a class="btn btn-outline-danger add-btn" role="button" onclick = "actionF('Пицца Ветчина Грибы', 550)" >Добавить</a></p>
+                <p><a class="btn btn-outline-danger add-btn" role="button" onclick = "addPizza(this.id, $('#'+this.id))" >Добавить</a></p>
             </div><!--/.col-xs-6.col-lg-4-->
         </div><!--/row-->
     </div><!--/.col-xs-12.col-sm-9-->
@@ -426,10 +432,23 @@
     </div><!--/.container-->
 <@dec.loginModal />
 
-    <script src="/js/js_vendor/jquery-3.2.1.slim.min.js"></script>
+    <#--<script src="/js/js_vendor/jquery-3.2.1.slim.min.js"></script>-->
     <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
     <script src="/js/js_vendor/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/js_vendor/bootstrap.bundle.js"></script>
 
+<script>
+    function addPizza(id, count) {
+        $.ajax({
+            url:'url',
+            method:'post',
+            dataType:'json',
+            data: {'id':id, 'count': count},
+            success: function (data) {
+                alert("success");
+            }
+        });
+    }
+</script>
 </body>
 </html>
