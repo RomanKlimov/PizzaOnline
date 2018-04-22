@@ -22,7 +22,7 @@ public class Order {
 
     private String address;
     private Long countOfPizzas;
-    private Double price;
+    private Long price;
     private String clientName;
     @Column(columnDefinition = "boolean default true")
     private Boolean isActive;

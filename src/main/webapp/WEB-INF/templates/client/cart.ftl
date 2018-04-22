@@ -26,6 +26,10 @@
 
 </#list>
 </ul>
+    <form name="orderPizza" action="/deleteFromCart" method="post">
+        <input type="hidden" name="cartId" value="${cart.id}">
+        <input type="submit" value="Удалить">
+    </form>
 
 </body>
 </html>

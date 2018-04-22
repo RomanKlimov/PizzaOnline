@@ -28,7 +28,7 @@ public class CartController {
 
 
 
-    @GetMapping("/getClientPizza")
+    @GetMapping("/cart")
     public String getAllClientPizza( ModelMap modelMap, Authentication authentication){
         User user = service.getUserByAuthentication(authentication);
         List<Cart> carts = cartService.getAllPizzas(user);
@@ -47,6 +47,6 @@ public class CartController {
                 }
             }
 
-        return "redirect:/getClientPizza";
+        return "redirect:/cart";
     }
 }

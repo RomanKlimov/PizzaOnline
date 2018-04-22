@@ -13,7 +13,6 @@ import ru.itis.pizzaonline.models.Pizza;
 import ru.itis.pizzaonline.models.User;
 import ru.itis.pizzaonline.services.implementations.*;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.Arrays;
 import java.util.List;
@@ -32,7 +31,7 @@ public class HomeController {
     private UserServiceImpl userService;
 
     @Autowired
-    private CartServiceImpl clientPizzaService;
+    private CartServiceImpl cartService;
 
     @GetMapping(value = "/home")
     public String home(@ModelAttribute("model") ModelMap modelMap) {
@@ -50,18 +49,18 @@ public class HomeController {
             if (authentication != null) {
                 User user = service.getUserByAuthentication(authentication);
                 Pizza originPizza = pizzaService.getPizzaById(pizzaForm.getPizzaId()); // do by optional and check it
-                Optional<Cart> clientPizzaOptional = clientPizzaService.getClientPizza(originPizza);
+                Optional<Cart> clientPizzaOptional = cartService.getClientPizza(originPizza);
                 if (clientPizzaOptional.isPresent()){
                     Cart cart = clientPizzaOptional.get();
                     cart.setCount(pizzaForm.getCount());
-                    clientPizzaService.addPizza(cart);
+                    this.cartService.addPizza(cart);
                     return ResponseEntity.ok().build();
                 }
                 Cart cart = new Cart();
                 cart.setPizza(originPizza);
                 cart.setCount(pizzaForm.getCount());
                 cart.setUser(user);
-                clientPizzaService.addPizza(cart);
+                this.cartService.addPizza(cart);
             }
         }
         return ResponseEntity.ok().build();
