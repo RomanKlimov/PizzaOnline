@@ -18,13 +18,8 @@ import java.net.URL;
 public class AppConfig extends WebMvcConfigurerAdapter {
 
     @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry){
-
-        registry.addResourceHandler("/css/**", "/fonts/**", "/js/**")
-                .addResourceLocations("/css/", "/fonts/", "/js/")
-                .setCachePeriod(3600)
-                .resourceChain(true);
-
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
     }
 
     @Bean
