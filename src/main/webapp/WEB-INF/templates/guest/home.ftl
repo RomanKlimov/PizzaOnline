@@ -45,20 +45,8 @@
         <p>Please wait...</p>
     </div>
 </div>
-<!-- #END# Page Loader -->
-<!-- Overlay For Sidebars -->
 <div class="overlay" style="display: none;"></div>
-<!-- #END# Overlay For Sidebars -->
-<!-- Search Bar -->
-<div class="search-bar">
-    <div class="search-icon">
-        <i class="material-icons">search</i>
-    </div>
-    <input type="text" placeholder="START TYPING...">
-    <div class="close-search">
-        <i class="material-icons">close</i>
-    </div>
-</div>
+
 <!-- #END# Search Bar -->
 <!-- Top Bar -->
 <nav class="navbar">
@@ -68,21 +56,34 @@
             <a href="javascript:void(0);" class="bars" style="display: none;"></a>
             <a class="navbar-brand" href="/resources/index.html">ITIS PIZZA</a>
         </div>
-        <div class="collapse navbar-collapse" id="navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <!-- Call Search -->
-                <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
-                <!-- #END# Call Search -->
-                <!-- Notifications -->
-
-                <!-- #END# Notifications -->
-                <!-- Tasks -->
-
-                <!-- #END# Tasks -->
-
+        <div class="navbar-header" id="navbar-collapse" style="float:  right;">
+            <ul class="nav navbar-nav navbar-center" style="">
+                <li style=" text-align:  center; margin-bottom: 2px;">
+                    <a href="javascript:void(0);" class="js-search" data-close="true" style="margin: 5px;">
+                        <i class="material-icons">search</i></a>
+                </li>
             </ul>
         </div>
-    </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse" style="
+            margin:  0 auto;
+            width: 687px;">
+            <ul class="nav navbar-nav navbar-center" style="margin-left: 27%;">
+                <li style="text-align:  center;">
+                    <a href="/home" class="">Пиццы</a>
+                </li>
+                <li style="text-align:  center;">
+                    <a href="#" class="">О нас</a></li>
+                <li style="text-align:  center;">
+                    <a href="#" class="">Акции</a>
+                </li>
+                <li style="text-align:  center;">
+                    <a href="/cart" class="">Корзина</a>
+                </li>
+                <li style="text-align:  center;">
+                    <a href="/login" class="">Войти</a>
+                </li>
+            </ul>
+        </div></div>
 </nav>
 <!-- #Top Bar -->
 <section>
@@ -237,7 +238,7 @@
 <section class="content" style="margin-top: 8%;">
     <div class="container-fluid">
         <div class="block-header"></div>
-        <div class="row clearfix">
+        <div class="row clearfix" style="margin-left: 8%; margin-right: 8%;">
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                 <div class="card" style="text-align:  center;">
                     <img class="card-img-top" src="http://storage.googleapis.com/bro-cdn1/zgrid/themes/10307/images/home/pizza.png" alt="Card image cap" style="

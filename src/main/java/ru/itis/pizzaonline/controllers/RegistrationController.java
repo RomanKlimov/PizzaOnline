@@ -58,7 +58,12 @@ public class RegistrationController {
                 .build();
         userService.createUserAccount(user);
 
-        return "redirect:/home";
+        return "redirect:/login";
+    }
+
+    @GetMapping("/signUp")
+    public String signUp(){
+        return "guest/signUp";
     }
 
 }

@@ -20,12 +20,12 @@ public class AuthController {
     private AuthenticationServiceImpl service;
 
     @GetMapping("/")
-    public String login(Authentication authentication, HttpServletRequest request){
+    public String auth(Authentication authentication, HttpServletRequest request){
         if (authentication!=null){
             User user = service.getUserByAuthentication(authentication);
             request.getSession().setAttribute("user", user);
             if (user.getRole().equals(Role.CLIENT)) {
-                return "redirect:/user/profile";
+                return "redirect:/home";
             }
             else if (user.getRole().equals(Role.ADMIN)){
                 return "redirect:/admin/users";
@@ -33,6 +33,7 @@ public class AuthController {
         }
         return "redirect:/home";
     }
+
     @GetMapping("/user/profile")
     public String userProfile(HttpServletRequest servletRequest,Authentication authentication, ModelMap modelMap) {
         if (authentication != null) {
@@ -42,6 +43,14 @@ public class AuthController {
             return "client/userProfile";
         }
         return "redirect:/home";
+    }
+
+    @GetMapping("/login")
+    public String login(Authentication authentication){
+        if (authentication != null){
+            return "redirect:/";
+        }
+        return "guest/login";
     }
 
     @GetMapping("/logout")
