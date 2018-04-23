@@ -246,6 +246,7 @@
     <div class="container-fluid">
         <div class="block-header"></div>
         <div class="row clearfix" style="margin-left: 8%; margin-right: 8%;">
+
 <#list model.list as pizza >
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                 <div class="card" style="text-align:  center;">
@@ -263,9 +264,20 @@
                     </div>
                     <div class="body">
                         <input class="form-control form-control-sm " id="${pizza.id}" type="text" placeholder="введите количество пицц" style="margin-bottom: 3%;">
+
+                        <#if Session.user??>
+                        <#if Session.user.role == 'ADMIN'>
+                        <form method="get" action="/admin/deletePizza/${pizza.id}" >
+                            <button class="btn btn-danger" type="submit"  style="width: 100%;">
+                                Удалить
+                            </button>
+                        </form>
+                        </#if>
+                        </#if>
                         <button class="btn btn-primary"  onclick="addPizza('${pizza.id}' , $('#'+${pizza.id}).val())" style="width: 100%;">
                             Добавить в корзину
                         </button>
+
                     </div>
                 </div>
             </div>

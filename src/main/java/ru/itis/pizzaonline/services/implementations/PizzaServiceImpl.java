@@ -3,6 +3,7 @@ package ru.itis.pizzaonline.services.implementations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.itis.pizzaonline.models.Pizza;
+import ru.itis.pizzaonline.repositories.ObjectDeleteJDBC;
 import ru.itis.pizzaonline.repositories.PizzaRepository;
 import ru.itis.pizzaonline.services.interfaces.PizzaService;
 
@@ -13,6 +14,9 @@ public class PizzaServiceImpl implements PizzaService {
 
     @Autowired
     private PizzaRepository pizzaRepository;
+
+    @Autowired
+    private ObjectDeleteJDBC objectDeleteJDBC;
 
 
     @Override
@@ -26,8 +30,8 @@ public class PizzaServiceImpl implements PizzaService {
     }
 
     @Override
-    public void deletePizza(String name) {
-        pizzaRepository.deleteByPizzaName(name);
+    public void deletePizza(Long id) {
+        objectDeleteJDBC.deletePizzaByAdmin(id);
 
     }
 

@@ -103,6 +103,12 @@ public class AdminController {
         return "redirect:/admin/pizzas";
     }
 
+    @GetMapping("/deletePizza/{id}")
+    public String deletePizza(@PathVariable("id") Long id){
+        pizzaService.deletePizza(id);
+        return "redirect:/admin/pizzas";
+    }
+
     @PostMapping("/deleteUser")
     public String deleteUser(@RequestParam(value = "email", required = true) String email){
         User user = adminService.deleteUser(email);
