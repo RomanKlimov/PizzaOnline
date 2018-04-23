@@ -12,4 +12,6 @@ public interface CartService {
     Optional<Cart> getClientPizza(Pizza pizza);
 
     List<Cart> getAllPizzas(User user);
+
+    void deleteCartByIDandUser(Long id, User user);
 }

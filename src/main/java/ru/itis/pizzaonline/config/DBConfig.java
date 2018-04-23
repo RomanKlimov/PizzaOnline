@@ -38,10 +38,6 @@ public class DBConfig {
         this.environment = environment;
     }
 
-    @Bean
-    public JdbcTemplate jdbcTemplate(DataSource dataSource){
-        return new JdbcTemplate(dataSource);
-    }
 
     @Bean
     public DataSource dataSource(){

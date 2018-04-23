@@ -31,4 +31,11 @@ public class CartServiceImpl implements CartService {
     public List<Cart> getAllPizzas(User user) {
         return cartRepository.findAllByUser(user);
     }
+
+    @Override
+    public void deleteCartByIDandUser(Long id, User user){
+        if(cartRepository.findFirstByIdAndUser(id, user).isPresent()) {
+            cartRepository.delete(id);
+        }
+    }
 }
