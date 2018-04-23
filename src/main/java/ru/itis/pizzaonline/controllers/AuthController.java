@@ -26,7 +26,9 @@ public class AuthController {
             if (user.getRole().equals(Role.CLIENT)) {
                 return "redirect:/home";
             }else if (user.getRole().equals(Role.ADMIN)){
-                return "redirect:/admin/users";
+                return "redirect:/admin/pizzas";
+            }else if (user.getRole().equals(Role.COURIER)){
+                return "redirect:/courier";
             }
         }
         return "redirect:/home";
@@ -36,9 +38,12 @@ public class AuthController {
     public String userProfile(HttpServletRequest servletRequest,Authentication authentication, ModelMap modelMap) {
         if (authentication != null) {
             User user = service.getUserByAuthentication(authentication);
-            modelMap.addAttribute("user",user);
-            servletRequest.getSession().setAttribute("isLogin",Boolean.TRUE);
-            return "client/userProfile";
+            if (user.getRole().equals(Role.CLIENT)){
+                modelMap.addAttribute("user",user);
+                servletRequest.getSession().setAttribute("isLogin",Boolean.TRUE);
+                return "client/userProfile";
+            }
+            return "redirect:/admin/pizzas";
         }
         return "redirect:/home";
     }

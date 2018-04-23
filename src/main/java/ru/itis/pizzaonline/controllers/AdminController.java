@@ -49,7 +49,7 @@ public class AdminController {
 //    }
 
     @GetMapping("/clients")
-    public String getClientsPage(@ModelAttribute("model")ModelMap modelMap){
+    public String getClientsPage(ModelMap modelMap){
         List<User> users = adminService.getAllUsersByRole(Role.CLIENT);
         modelMap.addAttribute("users", users);
         return "admin/clients";
@@ -78,7 +78,7 @@ public class AdminController {
     public String getCouriersPage(@ModelAttribute("model")ModelMap modelMap){
         List<User> users = adminService.getAllUsersByRole(Role.COURIER);
         modelMap.addAttribute("users", users);
-        return "couriersPage";
+        return "admin/couriersPage";
     }
 
     @GetMapping("/pizzas")

@@ -49,12 +49,12 @@
 
 <!-- #END# Search Bar -->
 <!-- Top Bar -->
-<nav class="navbar">
+<nav class="navbar" style="background-color: #00BCD4;">
     <div class="container-fluid">
         <div class="navbar-header">
             <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
             <a href="javascript:void(0);" class="bars" style="display: none;"></a>
-            <a class="navbar-brand" href="/resources/index.html">ITIS PIZZA</a>
+            <a class="navbar-brand" href="/home">ITIS PIZZA</a>
         </div>
         <div class="navbar-header" id="navbar-collapse" style="float:  right;">
             <ul class="nav navbar-nav navbar-center" style="">

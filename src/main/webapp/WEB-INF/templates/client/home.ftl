@@ -58,7 +58,7 @@
                     </li>
                     <li class="nav-item">
                     <#if Session.isLogin??>
-                            <a href="/user/profile" class="nav-link" id="btn-order">Личный кабинет</a>
+                            <a href="/" class="nav-link" id="btn-order">Личный кабинет</a>
                         </li>
                         <li>
                         <a href="/logout" class="nav-link" id="btn-order">Выйти с аккаунта</a>

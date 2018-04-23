@@ -59,209 +59,45 @@
 
 <!-- #END# Search Bar -->
 <!-- Top Bar -->
-<nav class="navbar">
+<nav class="navbar" style="background-color: #00BCD4;">
     <div class="container-fluid">
         <div class="navbar-header">
             <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
             <a href="javascript:void(0);" class="bars" style="display: none;"></a>
-            <a class="navbar-brand" href="/resources/index.html">ADMINBSB - MATERIAL DESIGN</a>
+            <a class="navbar-brand" href="/home">ITIS PIZZA</a>
         </div>
-        <div class="collapse navbar-collapse" id="navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <!-- Call Search -->
-                <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
-                <!-- #END# Call Search -->
-                <!-- Notifications -->
-                <li class="dropdown">
-                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                        <i class="material-icons">notifications</i>
-                        <span class="label-count">7</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="header">NOTIFICATIONS</li>
-                        <li class="body">
-                            <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 254px;"><ul class="menu" style="overflow: hidden; width: auto; height: 254px;">
-                                <li>
-                                    <a href="javascript:void(0);" class=" waves-effect waves-block">
-                                        <div class="icon-circle bg-light-green">
-                                            <i class="material-icons">person_add</i>
-                                        </div>
-                                        <div class="menu-info">
-                                            <h4>12 new members joined</h4>
-                                            <p>
-                                                <i class="material-icons">access_time</i> 14 mins ago
-                                            </p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class=" waves-effect waves-block">
-                                        <div class="icon-circle bg-cyan">
-                                            <i class="material-icons">add_shopping_cart</i>
-                                        </div>
-                                        <div class="menu-info">
-                                            <h4>4 sales made</h4>
-                                            <p>
-                                                <i class="material-icons">access_time</i> 22 mins ago
-                                            </p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class=" waves-effect waves-block">
-                                        <div class="icon-circle bg-red">
-                                            <i class="material-icons">delete_forever</i>
-                                        </div>
-                                        <div class="menu-info">
-                                            <h4><b>Nancy Doe</b> deleted account</h4>
-                                            <p>
-                                                <i class="material-icons">access_time</i> 3 hours ago
-                                            </p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class=" waves-effect waves-block">
-                                        <div class="icon-circle bg-orange">
-                                            <i class="material-icons">mode_edit</i>
-                                        </div>
-                                        <div class="menu-info">
-                                            <h4><b>Nancy</b> changed name</h4>
-                                            <p>
-                                                <i class="material-icons">access_time</i> 2 hours ago
-                                            </p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class=" waves-effect waves-block">
-                                        <div class="icon-circle bg-blue-grey">
-                                            <i class="material-icons">comment</i>
-                                        </div>
-                                        <div class="menu-info">
-                                            <h4><b>John</b> commented your post</h4>
-                                            <p>
-                                                <i class="material-icons">access_time</i> 4 hours ago
-                                            </p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class=" waves-effect waves-block">
-                                        <div class="icon-circle bg-light-green">
-                                            <i class="material-icons">cached</i>
-                                        </div>
-                                        <div class="menu-info">
-                                            <h4><b>John</b> updated status</h4>
-                                            <p>
-                                                <i class="material-icons">access_time</i> 3 hours ago
-                                            </p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class=" waves-effect waves-block">
-                                        <div class="icon-circle bg-purple">
-                                            <i class="material-icons">settings</i>
-                                        </div>
-                                        <div class="menu-info">
-                                            <h4>Settings updated</h4>
-                                            <p>
-                                                <i class="material-icons">access_time</i> Yesterday
-                                            </p>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul><div class="slimScrollBar" style="background: rgba(0, 0, 0, 0.5); width: 4px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 0px; z-index: 99; right: 1px;"></div><div class="slimScrollRail" style="width: 4px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 0px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
-                        </li>
-                        <li class="footer">
-                            <a href="javascript:void(0);" class=" waves-effect waves-block">View All Notifications</a>
-                        </li>
-                    </ul>
+        <div class="navbar-header" id="navbar-collapse" style="float:  right;">
+            <ul class="nav navbar-nav navbar-center" style="">
+                <li style=" text-align:  center; margin-bottom: 2px;">
+                    <a href="javascript:void(0);" class="js-search" data-close="true" style="margin: 5px;">
+                        <i class="material-icons">search</i></a>
                 </li>
-                <!-- #END# Notifications -->
-                <!-- Tasks -->
-                <li class="dropdown">
-                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                        <i class="material-icons">flag</i>
-                        <span class="label-count">9</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="header">TASKS</li>
-                        <li class="body">
-                            <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 254px;"><ul class="menu tasks" style="overflow: hidden; width: auto; height: 254px;">
-                                <li>
-                                    <a href="javascript:void(0);" class=" waves-effect waves-block">
-                                        <h4>
-                                            Footer display issue
-                                            <small>32%</small>
-                                        </h4>
-                                        <div class="progress">
-                                            <div class="progress-bar bg-pink" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 32%">
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class=" waves-effect waves-block">
-                                        <h4>
-                                            Make new buttons
-                                            <small>45%</small>
-                                        </h4>
-                                        <div class="progress">
-                                            <div class="progress-bar bg-cyan" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class=" waves-effect waves-block">
-                                        <h4>
-                                            Create new dashboard
-                                            <small>54%</small>
-                                        </h4>
-                                        <div class="progress">
-                                            <div class="progress-bar bg-teal" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 54%">
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class=" waves-effect waves-block">
-                                        <h4>
-                                            Solve transition issue
-                                            <small>65%</small>
-                                        </h4>
-                                        <div class="progress">
-                                            <div class="progress-bar bg-orange" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class=" waves-effect waves-block">
-                                        <h4>
-                                            Answer GitHub questions
-                                            <small>92%</small>
-                                        </h4>
-                                        <div class="progress">
-                                            <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 92%">
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul><div class="slimScrollBar" style="background: rgba(0, 0, 0, 0.5); width: 4px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 0px; z-index: 99; right: 1px;"></div><div class="slimScrollRail" style="width: 4px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 0px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
-                        </li>
-                        <li class="footer">
-                            <a href="javascript:void(0);" class=" waves-effect waves-block">View All Tasks</a>
-                        </li>
-                    </ul>
-                </li>
-                <!-- #END# Tasks -->
-                <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
             </ul>
         </div>
-    </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse" style="
+            margin:  0 auto;
+            width: 687px;">
+            <ul class="nav navbar-nav navbar-center" style="margin-left: 27%;">
+                <li style="text-align:  center;">
+                    <a href="/admin/pizzas" class="">Добавить пиццу</a>
+                </li>
+                <li style="text-align:  center;">
+                    <a href="/home" class="">Пиццы</a></li>
+                <li style="text-align:  center;">
+                    <a href="/admin/clients" class="">Клиенты</a>
+                </li>
+                <li style="text-align:  center;">
+                    <a href="/admin/couriers" class="">Курьеры</a>
+                </li>
+            <li style="text-align:  center;">
+            <#if Session.user??>
+                <a href="/logout" >Выйти</a>
+            <#else >
+                <a href="/login" class="">Войти</a>
+            </#if>
+            </li>
+            </ul>
+        </div></div>
 </nav>
 <!-- #Top Bar -->
 
@@ -269,7 +105,6 @@
 <section class="content" style="    margin: 100px 15px 0 0;">
     <div class="container-fluid">
         <div class="block-header">
-            <h2>BASIC CARD</h2>
         </div>
         <!-- Basic Card -->
         <div class="row clearfix">
@@ -301,8 +136,7 @@
                                             <div class="drag-icon-cph">
                                                 <i class="material-icons">touch_app</i>
                                             </div>
-                                            <h3>Drop files here or click to upload.</h3>
-                                            <em>(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</em>
+                                            <h3>Загрузить картинку..</h3>
                                         </div>
                                     <input type="file" name="file" class="dropify" data-max-file-size="2mb" data-default-file=""/>
                                 </div>
