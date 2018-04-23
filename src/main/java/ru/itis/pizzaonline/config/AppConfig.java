@@ -1,6 +1,7 @@
 package ru.itis.pizzaonline.config;
 
 import org.springframework.context.annotation.*;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -49,6 +50,13 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         resolver.setViewClass(FreeMarkerView.class);
 
         return resolver;
+    }
+
+    @Bean(name = "multipartResolver")
+    public CommonsMultipartResolver multipartResolver() {
+        CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
+        multipartResolver.setMaxUploadSize(1000000);
+        return multipartResolver;
     }
 
 

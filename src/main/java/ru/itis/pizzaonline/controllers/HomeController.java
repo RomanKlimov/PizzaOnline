@@ -13,6 +13,7 @@ import ru.itis.pizzaonline.models.Pizza;
 import ru.itis.pizzaonline.models.User;
 import ru.itis.pizzaonline.services.implementations.*;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.util.Arrays;
 import java.util.List;
@@ -32,6 +33,9 @@ public class HomeController {
 
     @Autowired
     private CartServiceImpl cartService;
+
+    @Autowired
+    private FileInfoServiceImpl fileInfoService;
 
     @GetMapping(value = "/home")
     public String home(@ModelAttribute("model") ModelMap modelMap) {
@@ -62,6 +66,11 @@ public class HomeController {
             }
         }
         return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/pic/{fileName:.+}")
+    public void getPicture(@PathVariable("fileName") String fileName, HttpServletResponse response){
+        fileInfoService.getPicture(fileName, response);
     }
 
 }

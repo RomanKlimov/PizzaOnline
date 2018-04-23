@@ -249,7 +249,7 @@
 <#list model.list as pizza >
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                 <div class="card" style="text-align:  center;">
-                    <img class="card-img-top" src="${pizza.imageUrl}" alt="Card image cap" style="
+                    <img class="card-img-top" src="/pic/${pizza.imageUrl}" alt="Card image cap" style="
                         max-width:  300px;
                         max-height:  300px;
                         min-width:  300px;
@@ -299,7 +299,8 @@
 
 </section>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script async="" src="https://www.google-analytics.com/analytics.js"></script><script src="/resources/plugins/jquery/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
 <script src="/resources/plugins/bootstrap/js/bootstrap.js"></script>
 <script src="/resources/plugins/bootstrap-select/js/bootstrap-select.js"></script>
 <script src="/resources/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>

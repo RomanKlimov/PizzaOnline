@@ -25,8 +25,7 @@ public class AuthController {
             request.getSession().setAttribute("user", user);
             if (user.getRole().equals(Role.CLIENT)) {
                 return "redirect:/home";
-            }
-            else if (user.getRole().equals(Role.ADMIN)){
+            }else if (user.getRole().equals(Role.ADMIN)){
                 return "redirect:/admin/users";
             }
         }
