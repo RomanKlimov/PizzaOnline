@@ -258,7 +258,7 @@
                         ${cart.pizza.pizzaName}
                     </h2>
                     <h3 style="font-weight: normal;color: #111;">
-                    ${cart.count}шт x ${cart.pizza.price} руб. = <span>2000</span>руб.
+                    ${cart.count}шт x ${cart.pizza.price} руб. = <span id="${cart.pizza.id}1" > 2000</span>руб.
                     </h3>
                     <a href="/deleteFromCart/${cart.id}" class="btn btn-danger"  style="margin-top: 10%;float: right;" onclick="deletePizza('${cart.id}')">Удалить</>
                 </div>
@@ -310,6 +310,9 @@
 <script src="/resources/js/demo.js"></script>
 
 <script>
+    function sum(count, price) {
+        var res = count*price;
+    }
     function deletePizza(id) {
         $.ajax({
             url:'/deleteFromCart',

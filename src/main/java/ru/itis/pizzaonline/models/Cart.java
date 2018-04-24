@@ -2,6 +2,8 @@ package ru.itis.pizzaonline.models;
 
 
 import lombok.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.util.List;
@@ -20,7 +22,8 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(targetEntity = Pizza.class)
+    @ManyToOne(targetEntity = Pizza.class, cascade = CascadeType.ALL)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Pizza pizza;
 
     @ManyToOne(targetEntity = User.class, fetch = FetchType.LAZY)

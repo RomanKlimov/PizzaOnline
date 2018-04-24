@@ -23,10 +23,6 @@ public class CartController {
     @Autowired
     private CartServiceImpl cartService;
 
-    @Autowired
-    private CartRepository cartRepository;
-
-
 
     @GetMapping("/cart")
     public String getAllClientPizza( ModelMap modelMap, Authentication authentication){
@@ -42,9 +38,7 @@ public class CartController {
 
             if (authentication != null) {
                 User user = service.getUserByAuthentication(authentication);
-                if(cartRepository.findFirstByIdAndUser(id, user).isPresent()) {
-                    cartRepository.delete(id);
-                }
+                cartService.deleteCartByIDandUser(id, user);
             }
 
         return "redirect:/cart";
