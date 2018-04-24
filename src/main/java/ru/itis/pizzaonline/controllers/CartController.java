@@ -37,8 +37,8 @@ public class CartController {
         return "client/cart";
     }
 
-    @PostMapping("/deleteFromCart")
-    public String fromCart(@RequestParam(value = "cartId", required = true) Long id,Authentication authentication) {
+    @GetMapping("/deleteFromCart")
+    public String fromCart(@PathVariable(value = "cartId", required = true) Long id,Authentication authentication) {
 
             if (authentication != null) {
                 User user = service.getUserByAuthentication(authentication);

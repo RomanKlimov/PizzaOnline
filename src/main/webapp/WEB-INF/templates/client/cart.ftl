@@ -1,3 +1,4 @@
+<#ftl encoding="utf-8">
 <html class="chrome"><head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -28,7 +29,7 @@
     <link href="/resources/css/themes/all-themes.css" rel="stylesheet">
 </head>
 
-<body class="theme-green">
+<body class="theme-green" data-gr-c-s-loaded="true">
 <!-- Page Loader -->
 <div class="page-loader-wrapper" style="display: none;">
     <div class="loader">
@@ -45,44 +46,48 @@
         <p>Please wait...</p>
     </div>
 </div>
-<!-- #END# Page Loader -->
-<!-- Overlay For Sidebars -->
 <div class="overlay" style="display: none;"></div>
-<!-- #END# Overlay For Sidebars -->
-<!-- Search Bar -->
-<div class="search-bar">
-    <div class="search-icon">
-        <i class="material-icons">search</i>
-    </div>
-    <input type="text" placeholder="START TYPING...">
-    <div class="close-search">
-        <i class="material-icons">close</i>
-    </div>
-</div>
+
 <!-- #END# Search Bar -->
 <!-- Top Bar -->
-<nav class="navbar">
+<nav class="navbar" style="background-color: #00BCD4;">
     <div class="container-fluid">
         <div class="navbar-header">
             <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
             <a href="javascript:void(0);" class="bars" style="display: none;"></a>
             <a class="navbar-brand" href="/home">ITIS PIZZA</a>
         </div>
-        <div class="collapse navbar-collapse" id="navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <!-- Call Search -->
-                <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
-                <!-- #END# Call Search -->
-                <!-- Notifications -->
-
-                <!-- #END# Notifications -->
-                <!-- Tasks -->
-
-                <!-- #END# Tasks -->
-
+        <div class="navbar-header" id="navbar-collapse" style="float:  right;">
+            <ul class="nav navbar-nav navbar-center" style="">
+                <li style=" text-align:  center; margin-bottom: 2px;">
+                    <a href="javascript:void(0);" class="js-search" data-close="true" style="margin: 5px;">
+                        <i class="material-icons">search</i></a>
+                </li>
             </ul>
         </div>
-    </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse" style="
+            margin:  0 auto;
+            width: 687px;">
+            <ul class="nav navbar-nav navbar-center" style="margin-left: 27%;">
+                <li style="text-align:  center;">
+                    <a href="/home" class="">Пиццы</a>
+                </li>
+                <li style="text-align:  center;">
+                    <a href="#" class="">О нас</a></li>
+                <li style="text-align:  center;">
+                    <a href="#" class="">Акции</a>
+                </li>
+                <li style="text-align:  center;">
+                    <a href="/cart" class="">Корзина</a>
+                </li>
+                <li style="text-align:  center;">
+                    <a href="/user/profile">Личный кабинет</a>
+                </li>
+                <li style="text-align: center">
+                    <a href="/logout">Выйти</a>
+                </li>
+            </ul>
+        </div></div>
 </nav>
 <!-- #Top Bar -->
 <section>
@@ -250,12 +255,12 @@
                 </div>
                 <div class="col-lg-8 col-md-4 col-sm-6 col-xs-12" style="margin-top: 5%;">
                     <h2 style="font-weight: normal;color: #111;">
-                        Пеперони
+                        ${cart.pizza.pizzaName}
                     </h2>
                     <h3 style="font-weight: normal;color: #111;">
                     ${cart.count}шт x ${cart.pizza.price} руб. = <span>2000</span>руб.
                     </h3>
-                    <button class="btn btn-danger" style="margin-top: 10%;float: right;" onclick="deletePizza('${cart.id}')">Удалить</button>
+                    <a href="/deleteFromCart/${cart.id}" class="btn btn-danger"  style="margin-top: 10%;float: right;" onclick="deletePizza('${cart.id}')">Удалить</>
                 </div>
             </div>
             <#else >

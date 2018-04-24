@@ -43,7 +43,7 @@ public class CourierController {
         if (orderOptional.isPresent()){
             Order order = orderOptional.get();
             order.setIsActive(false);
-            order.setCourier(user);
+            order.setCourier(user);//fix
         }
         return "redirect:/orders";
     }

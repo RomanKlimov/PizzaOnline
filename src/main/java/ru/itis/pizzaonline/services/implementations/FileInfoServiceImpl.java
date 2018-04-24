@@ -13,12 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.util.Optional;
 
-/**
- * Date 22.04.2018
- *
- * @author Hursanov Sulaymon
- * @version v1.0
- **/
 @Service
 public class FileInfoServiceImpl implements FileInfoService {
 
