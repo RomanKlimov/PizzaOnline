@@ -28,7 +28,7 @@ public class AuthController {
             }else if (user.getRole().equals(Role.ADMIN)){
                 return "redirect:/admin/pizzas";
             }else if (user.getRole().equals(Role.COURIER)){
-                return "redirect:/courier";
+                return "redirect:/courier/orders";
             }
         }
         return "redirect:/home";

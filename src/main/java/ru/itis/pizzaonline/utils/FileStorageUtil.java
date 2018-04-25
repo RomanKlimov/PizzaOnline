@@ -16,12 +16,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.UUID;
 
-/**
- * Date 22.04.2018
- *
- * @author Hursanov Sulaymon
- * @version v1.0
- **/
+
 @Component
 public class FileStorageUtil {
 

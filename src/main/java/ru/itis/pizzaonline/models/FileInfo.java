@@ -4,12 +4,6 @@ import lombok.*;
 
 import javax.persistence.*;
 
-/**
- * Date 22.04.2018
- *
- * @author Hursanov Sulaymon
- * @version v1.0
- **/
 @Setter
 @Getter
 @Entity

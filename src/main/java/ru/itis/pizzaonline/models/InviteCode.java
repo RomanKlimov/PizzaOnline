@@ -8,12 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-/**
- * Date 20.04.2018
- *
- * @author Hursanov Sulaymon
- * @version v1.0
- **/
 @Entity
 @Getter
 @Setter

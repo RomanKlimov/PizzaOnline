@@ -30,9 +30,6 @@ public class RegistrationController {
     @Autowired
     private UserRegistrationFormValidator userRegistrationFormValidator;
 
-    // @Autowired
-    private MessageSource messages;
-
     private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     @InitBinder("userForm")

@@ -10,12 +10,6 @@ import ru.itis.pizzaonline.services.interfaces.OrderService;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * Date 20.04.2018
- *
- * @author Hursanov Sulaymon
- * @version v1.0
- **/
 @Service
 public class OrderServiceImpl implements OrderService {
 

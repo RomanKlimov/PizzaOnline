@@ -22,7 +22,7 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(targetEntity = Pizza.class, cascade = CascadeType.ALL)
+    @ManyToOne(targetEntity = Pizza.class)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Pizza pizza;
 

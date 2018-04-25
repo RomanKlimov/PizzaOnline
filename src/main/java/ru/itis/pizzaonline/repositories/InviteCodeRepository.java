@@ -4,12 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import ru.itis.pizzaonline.models.InviteCode;
 
-/**
- * Date 20.04.2018
- *
- * @author Hursanov Sulaymon
- * @version v1.0
- **/
 @Repository
 public interface InviteCodeRepository extends JpaRepository<InviteCode, Long> {
 }

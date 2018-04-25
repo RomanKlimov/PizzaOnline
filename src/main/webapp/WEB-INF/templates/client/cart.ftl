@@ -1,4 +1,3 @@
-<#ftl encoding="utf-8">
 <html class="chrome"><head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -243,7 +242,7 @@
     <div class="container-fluid">
         <div class="block-header"></div>
         <div class="row clearfix">
-            <#list carts as cart >
+        <#list carts as cart >
             <div class="row card" style="background: #fff;margin: 0 60px 30px;">
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="text-align:  center;">
                     <img class="card-img-top" src="/pic/${cart.pizza.imageUrl!'http://storage.googleapis.com/bro-cdn1/zgrid/themes/10307/images/home/pizza.png'}" alt="Card image cap" style="
@@ -258,12 +257,12 @@
                         ${cart.pizza.pizzaName}
                     </h2>
                     <h3 style="font-weight: normal;color: #111;">
-                    ${cart.count}шт x ${cart.pizza.price} руб. = <span id="${cart.pizza.id}1" > 2000</span>руб.
+                    ${cart.count}шт x ${cart.pizza.price} руб. = <span id="${cart.pizza.id}1" > 300</span>руб.
                     </h3>
-                    <a href="/deleteFromCart/${cart.id}" class="btn btn-danger"  style="margin-top: 10%;float: right;" onclick="deletePizza('${cart.id}')">Удалить</>
+                    <button class="btn btn-danger" style="margin-top: 10%;float: right;" onclick="deletePizza('${cart.id}')">Удалить</button>
                 </div>
             </div>
-            <#else >
+        <#else >
             <div class="row card" style="background: #fff;margin: 0 60px 30px;">
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="text-align:  center;">
                     <img class="card-img-top" src="http://storage.googleapis.com/bro-cdn1/zgrid/themes/10307/images/home/pizza.png" alt="Card image cap" style="
@@ -283,13 +282,13 @@
                     <button class="btn btn-danger" style="margin-top: 10%;float:  right;">Удалить</button>
                 </div>
             </div>
-            </#list>
-                <div class="row card" style="background: #fff;margin: 0 60px 30px;">
-                    <a href="/orderPizza" class="btn btn-success" style="float:  right;margin: 1%;">
-                        Заказать
-                    </a>
+        </#list>
+            <div class="row card" style="background: #fff;margin: 0 60px 30px;">
+                <a href="/orderPizza" class="btn btn-success" style="float:  right;margin: 1%;">
+                    Заказать
+                </a>
 
-                </div>
+            </div>
 
 
         </div>
