@@ -7,5 +7,7 @@ import java.util.List;
 public interface PizzaService {
     void addPizza(Pizza pizza);
     List<Pizza> getAllPizzas();
-    void deletePizza(String name);
+    void deletePizza(Long id);
+
+    Pizza getPizzaById(Long id);
 }

@@ -5,14 +5,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import ru.itis.pizzaonline.forms.UserRegistrationForm;
+import ru.itis.pizzaonline.models.FileInfo;
 import ru.itis.pizzaonline.models.InviteCode;
 import ru.itis.pizzaonline.models.Pizza;
 import ru.itis.pizzaonline.models.User;
 import ru.itis.pizzaonline.security.Role.Role;
 import ru.itis.pizzaonline.services.implementations.AdminServiceImpl;
+import ru.itis.pizzaonline.services.implementations.FileInfoServiceImpl;
 import ru.itis.pizzaonline.services.implementations.PizzaServiceImpl;
+import ru.itis.pizzaonline.utils.FileStorageUtil;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -27,6 +31,12 @@ public class AdminController {
     @Autowired
     private AdminServiceImpl adminService;
 
+    @Autowired
+    private FileStorageUtil fileStorageUtil;
+
+    @Autowired
+    private FileInfoServiceImpl fileInfoService;
+
 //    @Autowired
 //    private PizzaFormValidator pizzaFormValidator;
 //
@@ -39,7 +49,7 @@ public class AdminController {
 //    }
 
     @GetMapping("/clients")
-    public String getClientsPage(@ModelAttribute("model")ModelMap modelMap){
+    public String getClientsPage(ModelMap modelMap){
         List<User> users = adminService.getAllUsersByRole(Role.CLIENT);
         modelMap.addAttribute("users", users);
         return "admin/clients";
@@ -68,22 +78,35 @@ public class AdminController {
     public String getCouriersPage(@ModelAttribute("model")ModelMap modelMap){
         List<User> users = adminService.getAllUsersByRole(Role.COURIER);
         modelMap.addAttribute("users", users);
-        return "couriersPage";
+        return "admin/couriersPage";
     }
 
     @GetMapping("/pizzas")
     public String getPizzas(@ModelAttribute("model")ModelMap modelMap){
         List<Pizza> pizzas = adminService.getAllPizzas();
         modelMap.addAttribute("pizzas", pizzas);
-        return "pizzasPage";
+        return "admin/pizzasPage";
     }
 
-    @PostMapping("/addPizza")
-    public String addPizza(@Valid @ModelAttribute("pizzaForm") Pizza pizza, BindingResult errors, RedirectAttributes attributes){
-        if (errors.hasErrors())
+    @PostMapping(value = "/addPizza", consumes = "multipart/form-data")
+    public String addPizza(@Valid @ModelAttribute("pizzaForm") Pizza pizza, BindingResult errors, RedirectAttributes attributes,
+                           @RequestParam("file") MultipartFile file){
+        if (errors.hasErrors()){
             attributes.addAttribute("errorPizza", errors.getAllErrors().get(0).getDefaultMessage());
-        else pizzaService.addPizza(pizza);
-        return "redirect:/pizzas";
+            return "redirect:/admin/pizzas";
+        }
+        if (file.getSize()>0){
+            FileInfo fileInfo = fileInfoService.savePicture(file);
+            pizza.setImageUrl(fileInfo.getFileName());
+        }
+        pizzaService.addPizza(pizza);
+        return "redirect:/admin/pizzas";
+    }
+
+    @GetMapping("/deletePizza/{id}")
+    public String deletePizza(@PathVariable("id") Long id){
+        pizzaService.deletePizza(id);
+        return "redirect:/admin/pizzas";
     }
 
     @PostMapping("/deleteUser")

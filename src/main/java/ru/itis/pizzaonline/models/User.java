@@ -7,6 +7,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import java.util.List;
+import java.util.Map;
 
 @Getter
 @Setter
@@ -42,6 +43,9 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     private Role role;
-    @OneToMany
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Order> orders;
+
+
 }

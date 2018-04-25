@@ -1,27 +1,25 @@
-package ru.itis.pizzaonline.models;
+package ru.itis.pizzaonline.forms;
 
 import lombok.Getter;
+import lombok.NonNull;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
-@Getter
 @Setter
-public class InviteCode {
+@Getter
+@Entity
+@ToString
+public class OrderForm {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String code;
+    @NonNull
+    private String address;
 
-    private String forName;
-
-    public InviteCode(String code, String forName) {
-        this.code = code;
-        this.forName = forName;
-    }
 }

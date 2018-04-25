@@ -89,65 +89,10 @@
             </ul>
         </div></div>
 </nav>
-<div class="col-6 content">
 
-
-    <div class="card card-info  border-secondary ">
-        <div class="card-header bg-dark border-secondary ">
-            <h3 class="card-title text-white">Профиль, Roman</h3>
-        </div>
-        <div class="card-body">
-            <div class="row" style="
-    margin-top:  50px;
-">
-                <div class="col-md-3 col-lg-3 " align="center">
-                    <div class="dz-message">
-                        <div class="drag-icon-cph">
-                            <i class="material-icons">touch_app</i>
-                        </div>
-                        <h3>Загрузить картинку..</h3>
-                    </div>
-                    <input type="file" name="file" class="dropify" data-max-file-size="2mb" data-default-file="">
-                </div>
-
-
-                <div class=" col-md-9 col-lg-9 ">
-                    <table class="table table-user-information">
-                        <tbody>
-                        <tr>
-                            <td>Имя</td>
-                            <td>${user.name}</td>
-                        </tr>
-                        <tr>
-                            <td>Email</td>
-                            <td>${user.email}</td>
-                        </tr>
-                        <tr><td>Номер телефона</td>
-                            <td>${user.phoneNumber}</td>
-                        </tr>
-                        <tr>
-                            <td>Обновить пароль</td>
-                            <td><input type="password" class="btn border-info" value="" placeholder="старый пароль"></td>
-                            <td><input type="password" class="btn border-info" value="" placeholder="новый пароль"></td>
-                        </tr>
-                        </tbody>
-                    </table>
-
-                    <a href="#" class="btn btn-primary" style="float: right;">Сохранить</a>
-                </div>
-            </div>
-        </div>
-        <div class="card-footer bg-dark border-secondary ">
-            <span class="pull-right">
-              <a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><a href="#" class="btn btn-primary" style="float: right;">Удалить аккаунт</a></a>
-            </span>
-        </div>
-
-    </div>
-</div>
-
-
-
+<h1 style="
+    margin-top:  10%;
+">Ожидайте доставки</h1>
 
 
 </body>

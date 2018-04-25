@@ -14,6 +14,8 @@ public class PizzaServiceImpl implements PizzaService {
     @Autowired
     private PizzaRepository pizzaRepository;
 
+
+
     @Override
     public void addPizza(Pizza pizza) {
         pizzaRepository.save(pizza);
@@ -25,8 +27,14 @@ public class PizzaServiceImpl implements PizzaService {
     }
 
     @Override
-    public void deletePizza(String name) {
-        pizzaRepository.deleteByPizzaName(name);
+    public void deletePizza(Long id) {
+        pizzaRepository.delete(id);
 
     }
+
+    @Override
+    public Pizza getPizzaById(Long id) {
+        return pizzaRepository.getOne(id);
+    }
+
 }

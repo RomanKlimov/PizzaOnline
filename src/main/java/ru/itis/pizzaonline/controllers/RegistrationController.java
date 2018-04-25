@@ -1,13 +1,10 @@
 package ru.itis.pizzaonline.controllers;
 
-import com.nulabinc.zxcvbn.Strength;
-import com.nulabinc.zxcvbn.Zxcvbn;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
@@ -18,27 +15,20 @@ import ru.itis.pizzaonline.exceptions.EmailExistsException;
 import ru.itis.pizzaonline.forms.UserRegistrationForm;
 import ru.itis.pizzaonline.models.User;
 import ru.itis.pizzaonline.security.Role.Role;
-import ru.itis.pizzaonline.services.interfaces.RegistrationService;
+import ru.itis.pizzaonline.services.interfaces.UserService;
 import ru.itis.pizzaonline.validators.UserRegistrationFormValidator;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
-import java.util.concurrent.TimeUnit;
 
 @Controller
 public class RegistrationController {
 
     @Autowired
-    private RegistrationService registrationService;
+    private UserService userService;
 
     @Autowired
     private UserRegistrationFormValidator userRegistrationFormValidator;
-
-    // @Autowired
-    private MessageSource messages;
 
     private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
@@ -63,9 +53,14 @@ public class RegistrationController {
                 .hashPassword(hashPass)
                 .role(Role.CLIENT)
                 .build();
-        registrationService.createUserAccount(user);
+        userService.createUserAccount(user);
 
-        return "redirect:/home";
+        return "redirect:/login";
+    }
+
+    @GetMapping("/signUp")
+    public String signUp(){
+        return "guest/signUp";
     }
 
 }
