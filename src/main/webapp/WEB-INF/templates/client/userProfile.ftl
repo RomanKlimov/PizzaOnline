@@ -8,7 +8,7 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    <link href="/resources/css/icon.css" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core Css -->
     <link href="/resources/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -21,6 +21,8 @@
 
     <!-- Animation Css -->
     <link href="/resources/plugins/animate-css/animate.css" rel="stylesheet">
+
+    <link href="/resources/plugins/dropzone/dropzone.css" rel="stylesheet">
 
     <!-- Custom Css -->
     <link href="/resources/css/style.css" rel="stylesheet">
@@ -89,25 +91,37 @@
             </ul>
         </div></div>
 </nav>
-<div class="col-6 content">
+<div class="col-6 content" style="    margin-top: 6%;">
 
-
-    <div class="card card-info  border-secondary ">
-        <div class="card-header bg-dark border-secondary ">
-            <h3 class="card-title text-white">Профиль, Roman</h3>
+    <div class="card card-info  border-secondary " style="height: 117%;">
+        <div class="header ">
+            <h4 class="card-title text-white">Профиль, ${user.name}</h4>
         </div>
-        <div class="card-body">
+        <div class="card-body" style="    width: 95%; margin: auto;">
             <div class="row" style="
     margin-top:  50px;
 ">
                 <div class="col-md-3 col-lg-3 " align="center">
+                    <#if user.imageUrl??>
+                    <img src="/pic/${user.imageUrl}" style="
+                        max-width:  300px;
+                        max-height:  300px;
+                        min-width:  300px;
+                        min-height:  300px;
+                        width: 61px;">
+                    <#else >
+                    <form action="/uploadImageProfile" id="frmFileUpload" class="dropzone dz-clickable" method="post" enctype="multipart/form-data">
                     <div class="dz-message">
                         <div class="drag-icon-cph">
                             <i class="material-icons">touch_app</i>
                         </div>
-                        <h3>Загрузить картинку..</h3>
+                        <h4>Загрузить картинку..</h4>
                     </div>
-                    <input type="file" name="file" class="dropify" data-max-file-size="2mb" data-default-file="">
+                    <div class="fallback">
+                        <input name="file" type="file" multiple />
+                    </div>
+                    </form>
+                    </#if>
                 </div>
 
 
@@ -133,14 +147,10 @@
                         </tbody>
                     </table>
 
+                    <a href="#" class="btn btn-danger" style="float: right;margin-right: 2%;">Удалить аккаунт</a>
                     <a href="#" class="btn btn-primary" style="float: right;">Сохранить</a>
                 </div>
             </div>
-        </div>
-        <div class="card-footer bg-dark border-secondary ">
-            <span class="pull-right">
-              <a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><a href="#" class="btn btn-primary" style="float: right;">Удалить аккаунт</a></a>
-            </span>
         </div>
 
     </div>
@@ -148,7 +158,7 @@
 
 
 
-
+<script src="/resources/plugins/dropzone/dropzone.js"></script>
 
 </body>
 </html>

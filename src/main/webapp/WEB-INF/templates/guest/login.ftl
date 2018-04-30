@@ -10,7 +10,7 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    <link href="/resources/css/icon.css" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core Css -->
     <link href="/resources/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -51,6 +51,16 @@
                         <input type="password" class="form-control" name="password" placeholder="Пароль" required="" aria-required="true">
                     </div>
                 </div>
+
+            <#if RequestParameters.error??>
+                <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">warning</i>
+                        </span>
+                        <label style="color: #e91e63; margin-top: 5px;">Неправильный логин/пароль!</label>
+                </div>
+            </#if>
+
                 <div class="row">
                     <div class="col-xs-8 p-t-5">
                         <input type="checkbox" name="rememberme" id="rememberme" class="filled-in chk-col-pink">

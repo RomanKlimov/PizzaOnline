@@ -9,7 +9,7 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    <link href="/resources/css/icon.css" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core Css -->
     <link href="/resources/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -117,59 +117,47 @@
                         </ul>
                     </div>
                     <div class="body">
-                        <div class="table-responsive">
-                            <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper form-inline dt-bootstrap"><div class="row"><div class="col-sm-6"><div class="dataTables_length" id="DataTables_Table_0_length"><label>Show <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class="form-control input-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-6"><div id="DataTables_Table_0_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control input-sm" placeholder="" aria-controls="DataTables_Table_0"></label></div></div></div><div class="row"><div class="col-sm-12"><table class="table table-bordered table-striped table-hover js-basic-example dataTable" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
-                                <thead>
-                                <tr role="row">
-                                    <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 152px;">
-                                        Id
-                                    </th>
-                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 171px;">
-                                        Имя
-                                    </th>
-                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 69px;">
-                                        Почта
-                                    </th>
-                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 133px;">
-                                        Телефон
-                                    </th>
-                                </tr>
-                                </thead>
-                                <tbody>
+
+                        <div class="body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                    <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Имя</th>
+                                        <th>Почта</th>
+                                        <th>Телефон</th>
+                                    </tr>
+                                    <tbody>
                                 <#list users as user>
-                                <tr role="row" class="odd">
-                                    <td class="sorting_1">${user.id}</td>
+                                <tr>
+                                    <td >${user.id}</td>
                                     <td >${user.name}</td>
                                     <td>${user.email}</td>
                                     <td>${user.phoneNumber}</td>
                                 </tr>
                                 <#else >
                                 </#list>
+
                                 <form action="/admin/addUser" method="post">
-                                    <tr role="row" class="even">
-                                        <td class="sorting_1">id</td>
+                                    <tr>
+                                        <td>id</td>
                                         <td><input class="form-control" name="name"  type="text"></td>
                                         <td><input class="form-control" name="email" type="text"></td>
                                         <td><input class="form-control" name="phoneNumber" type="text"></td>
                                     </tr>
-                                    <tr role="row" class="even">
+                                    <tr>
                                         <td></td>
                                         <td></td>
                                         <td></td>
                                         <td><input type="submit" class="btn btn-success" value="Добавить"></td>
                                     </tr>
                                 </form>
-                                </tbody>
-                            </table></div></div><div class="row"><div class="col-sm-5"><div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 1 to 2 of 2 entries</div></div><div class="col-sm-7"><div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate"><ul class="pagination"><li class="paginate_button previous disabled" id="DataTables_Table_0_previous"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0">Previous</a></li><li class="paginate_button active"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0">1</a></li><li class="paginate_button next disabled" id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0">Next</a></li></ul></div></div></div></div>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- #END# Basic Examples -->
-        <!-- Exportable Table -->
 
-        <!-- #END# Exportable Table -->
     </div>
 </section>
 

@@ -40,6 +40,7 @@ public class User {
     @Column(name = "hashPassword")
     private String hashPassword;
 
+    private String imageUrl;
 
     @Enumerated(EnumType.STRING)
     private Role role;
