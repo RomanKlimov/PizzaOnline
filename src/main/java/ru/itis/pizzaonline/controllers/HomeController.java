@@ -1,5 +1,7 @@
 package ru.itis.pizzaonline.controllers;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -21,6 +23,7 @@ import java.util.Optional;
 
 @Controller
 public class HomeController {
+    private static final Logger logger = LogManager.getLogger(RegistrationController.class);
 
     @Autowired
     private AuthenticationServiceImpl service;
@@ -40,6 +43,7 @@ public class HomeController {
     @GetMapping(value = "/home")
     public String home(@ModelAttribute("model") ModelMap modelMap) {
         List<Pizza> pizzaList = pizzaService.getAllPizzas();
+        logger.warn("Получили пиццы");
         modelMap.addAttribute("list", pizzaList);
         return "guest/home";
     }
@@ -58,11 +62,13 @@ public class HomeController {
                     this.cartService.addPizza(cart);
                     return ResponseEntity.ok().build();
                 }
+
                 Cart cart = new Cart();
                 cart.setPizza(originPizza);
                 cart.setCount(pizzaForm.getCount());
                 cart.setUser(user);
                 this.cartService.addPizza(cart);
+                logger.debug("Добавлена пицца в корзину");
             }
         }
         return ResponseEntity.ok().build();

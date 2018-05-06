@@ -1,5 +1,7 @@
 package ru.itis.pizzaonline.controllers;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -24,6 +26,8 @@ import javax.validation.Valid;
 @Controller
 public class RegistrationController {
 
+    private static final Logger logger = LogManager.getLogger(RegistrationController.class);
+
     @Autowired
     private UserService userService;
 
@@ -42,6 +46,7 @@ public class RegistrationController {
     public String registerUserAccount(@ModelAttribute("userForm") @Valid UserRegistrationForm userRegistrationForm,
                                       BindingResult errors, WebRequest request, RedirectAttributes attributes, HttpServletRequest httpServletRequest, ModelMap modelMap) throws EmailExistsException {
         if (errors.hasErrors()){
+            logger.error("Ошибки в форме");
             attributes.addFlashAttribute("error" , errors.getAllErrors().get(0).getDefaultMessage());
             return "redirect:/home";
         }
@@ -54,6 +59,8 @@ public class RegistrationController {
                 .role(Role.CLIENT)
                 .build();
         userService.createUserAccount(user);
+        logger.warn("Добавлен пользователь в БД");
+        logger.info("Перенаправляем пользователя на страницу логина");
 
         return "redirect:/login";
     }

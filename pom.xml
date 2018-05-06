@@ -29,6 +29,7 @@
         <hibernate.version>5.2.12.Final</hibernate.version>
         <javax-validation.version>2.0.1.Final</javax-validation.version>
         <javax.servlet-api.version>2.5</javax.servlet-api.version>
+        <log4j.version>2.11.0</log4j.version>
 
     </properties>
 
@@ -204,6 +205,12 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
             <version>4.3.14.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
         </dependency>
 
 
